@@ -1,0 +1,9 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory '/home/speech/Desktop/vosk/lid_kaldi/native'
+g++ -g -O2 -std=c++17 -fPIC -DFST_NO_DYNAMIC_LINKING  -I. -I/opt/kaldi/src -I/opt/kaldi/tools/openfst/include -I/opt/kaldi/tools/OpenBLAS/install/include -c -o kaldi_recognizer.o kaldi_recognizer.cc
+g++ -g -O2 -std=c++17 -fPIC -DFST_NO_DYNAMIC_LINKING  -I. -I/opt/kaldi/src -I/opt/kaldi/tools/openfst/include -I/opt/kaldi/tools/OpenBLAS/install/include -c -o lid_model.o lid_model.cc
+g++ -g -O2 -std=c++17 -fPIC -DFST_NO_DYNAMIC_LINKING  -I. -I/opt/kaldi/src -I/opt/kaldi/tools/openfst/include -I/opt/kaldi/tools/OpenBLAS/install/include -c -o lid_api.o lid_api.cc
+ 
+g++ --shared -s -o liblid.so kaldi_recognizer.o lid_model.o lid_api.o /opt/kaldi/src/online2/kaldi-online2.a /opt/kaldi/src/decoder/kaldi-decoder.a /opt/kaldi/src/ivector/kaldi-ivector.a /opt/kaldi/src/gmm/kaldi-gmm.a /opt/kaldi/src/nnet3/kaldi-nnet3.a /opt/kaldi/src/tree/kaldi-tree.a /opt/kaldi/src/feat/kaldi-feat.a /opt/kaldi/src/lat/kaldi-lat.a /opt/kaldi/src/lm/kaldi-lm.a /opt/kaldi/src/hmm/kaldi-hmm.a /opt/kaldi/src/transform/kaldi-transform.a /opt/kaldi/src/cudamatrix/kaldi-cudamatrix.a /opt/kaldi/src/matrix/kaldi-matrix.a /opt/kaldi/src/fstext/kaldi-fstext.a /opt/kaldi/src/util/kaldi-util.a /opt/kaldi/src/base/kaldi-base.a /opt/kaldi/tools/openfst/lib/libfst.a /opt/kaldi/tools/openfst/lib/libfstngram.a /opt/kaldi/tools/OpenBLAS/install/lib/libopenblas.a /opt/kaldi/tools/OpenBLAS/install/lib/liblapack.a /opt/kaldi/tools/OpenBLAS/install/lib/libblas.a /opt/kaldi/tools/OpenBLAS/install/lib/libf2c.a -lm -latomic 
+make: Leaving directory '/home/speech/Desktop/vosk/lid_kaldi/native'
+ 

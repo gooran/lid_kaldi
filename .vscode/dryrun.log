@@ -1,0 +1,6 @@
+make all --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/speech/Desktop/vosk/lid_kaldi'
+g++ -I native -c -o test_lid.o test_lid.c
+g++ test_lid.o -o test_lid -L native -llid -ldl -lpthread -Wl,-rpath=native
+make: Leaving directory '/home/speech/Desktop/vosk/lid_kaldi'
+ 

@@ -1,0 +1,10 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/speech/Desktop/vosk/lid_kaldi",
+            "binaryPath": "/home/speech/Desktop/vosk/lid_kaldi/test_lid",
+            "binaryArgs": []
+        }
+    ]
+}

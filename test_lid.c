@@ -7,15 +7,13 @@
 
 int main() {
 
-    char ch_arr[3][29] = {
-        "test_ru.wav",
-        "test_ru.wav",
+    char ch_arr[1][29] = {
         "test_ru.wav"
     };
 
-    L2mLidModel *lid_model = l2m_lid_model_new("lid-107");
+    L2mLidModel *lid_model = l2m_lid_model_new("lid-model");
 
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 1; i++) {
         L2mRecognizer *recognizer = l2m_recognizer_new_lid(lid_model, 8000.0);
         FILE *wavin;
         int nread, final;
