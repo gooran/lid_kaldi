@@ -8,7 +8,7 @@
 int main() {
 
     char ch_arr[1][29] = {
-        "001F05.wav"
+        "003F02.wav"
     };
 
     L2mLidModel *lid_model = l2m_lid_model_new("spk-model");
