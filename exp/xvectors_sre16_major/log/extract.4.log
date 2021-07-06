@@ -1,0 +1,26 @@
+# nnet3-xvector-compute --use-gpu=no --min-chunk-size=20 --chunk-size=400 --cache-capacity=64 "nnet3-copy --nnet-config=exp/xvector_nnet_1a/extract.config exp/xvector_nnet_1a/final.raw - |" "ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:data/sre16_major/split20/4/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:data/sre16_major/split20/4/vad.scp ark:- |" ark,scp:exp/xvectors_sre16_major/xvector.4.ark,exp/xvectors_sre16_major/xvector.4.scp 
+# Started at Mon Jun 21 15:39:15 EDT 2021
+#
+nnet3-xvector-compute --use-gpu=no --min-chunk-size=20 --chunk-size=400 --cache-capacity=64 'nnet3-copy --nnet-config=exp/xvector_nnet_1a/extract.config exp/xvector_nnet_1a/final.raw - |' 'ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:data/sre16_major/split20/4/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:data/sre16_major/split20/4/vad.scp ark:- |' ark,scp:exp/xvectors_sre16_major/xvector.4.ark,exp/xvectors_sre16_major/xvector.4.scp 
+nnet3-copy --nnet-config=exp/xvector_nnet_1a/extract.config exp/xvector_nnet_1a/final.raw - 
+WARNING (nnet3-copy[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node tdnn6.relu is never used to compute any output.
+WARNING (nnet3-copy[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node tdnn6.batchnorm is never used to compute any output.
+WARNING (nnet3-copy[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node output.affine is never used to compute any output.
+WARNING (nnet3-copy[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node output.log-softmax is never used to compute any output.
+LOG (nnet3-copy[5.5.931~1-aecd]:main():nnet3-copy.cc:123) Copied raw neural net from exp/xvector_nnet_1a/final.raw to -
+WARNING (nnet3-xvector-compute[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node tdnn6.relu is never used to compute any output.
+WARNING (nnet3-xvector-compute[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node tdnn6.batchnorm is never used to compute any output.
+WARNING (nnet3-xvector-compute[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node output.affine is never used to compute any output.
+WARNING (nnet3-xvector-compute[5.5.931~1-aecd]:Check():nnet-nnet.cc:789) Node output.log-softmax is never used to compute any output.
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 4 orphan nodes.
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 4 orphan components.
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:Collapse():nnet-utils.cc:1488) Added 0 components, removed 4
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:data/sre16_major/split20/4/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:data/sre16_major/split20/4/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.931~1-aecd]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 10 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.931~1-aecd]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 10 utterances, 0 had errors.
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:main():nnet3-xvector-compute.cc:238) Time taken 58.8069s: real-time factor assuming 100 frames/sec is 0.0593093
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:main():nnet3-xvector-compute.cc:241) Done 10 utterances, failed for 0
+LOG (nnet3-xvector-compute[5.5.931~1-aecd]:~CachingOptimizingCompiler():nnet-optimize.cc:710) 0.421 seconds taken in nnet3 compilation total (breakdown: 0.383 compilation, 0.0136 optimization, 0 shortcut expansion, 0.00325 checking, 9.06e-06 computing indexes, 0.0209 misc.) + 0 I/O.
+# Accounting: time=59 threads=1
+# Ended (code 0) at Mon Jun 21 15:40:14 EDT 2021, elapsed time 59 seconds

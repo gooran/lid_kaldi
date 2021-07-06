@@ -1,0 +1,445 @@
+# compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/utt2dur.10 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/wav_sre16_major.10.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/utt2num_frames.10 --compress=true ark:- ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_major.10.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_major.10.scp 
+# Started at Mon Jun 21 15:37:54 EDT 2021
+#
+copy-feats --write-num-frames=ark,t:exp/make_mfcc/utt2num_frames.10 --compress=true ark:- ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_major.10.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_major.10.scp 
+compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/utt2dur.10 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/wav_sre16_major.10.scp ark:- 
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD7/014/Fixed/014F06.wav':
+  Duration: 00:02:11.32, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=9.32x    size=     200kB time=00:00:12.81 bitrate= 128.0kbits/s speed=9.18x    size=     572kB time=00:00:36.59 bitrate= 128.0kbits/s speed=19.1x    size=     990kB time=00:01:03.34 bitrate= 128.0kbits/s speed=25.5x    size=    1268kB time=00:01:21.17 bitrate= 128.0kbits/s speed=24.4x    size=    1686kB time=00:01:47.92 bitrate= 128.0kbits/s speed=27.2x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=30.2x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-014F06
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD7/014/Fixed/014F07.wav':
+  Duration: 00:02:18.45, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed= 9.6x    size=     525kB time=00:00:33.62 bitrate= 128.0kbits/s speed=23.4x    size=     943kB time=00:01:00.36 bitrate= 128.0kbits/s speed=26.1x    size=    1361kB time=00:01:27.11 bitrate= 128.0kbits/s speed=27.9x    size=    1779kB time=00:01:53.86 bitrate= 128.0kbits/s speed=28.1x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=  27x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-014F07
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD7/014/Fixed/014F08.wav':
+  Duration: 00:02:23.16, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=10.2x    size=     525kB time=00:00:33.62 bitrate= 128.0kbits/s speed=24.2x    size=     943kB time=00:01:00.36 bitrate= 128.0kbits/s speed=26.8x    size=    1408kB time=00:01:30.09 bitrate= 128.0kbits/s speed=22.7x    size=    1826kB time=00:01:56.84 bitrate= 128.0kbits/s speed=25.4x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=  26x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-014F08
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD7/014/Fixed/014F09.wav':
+  Duration: 00:02:02.74, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/sVLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=11.6x    size=     386kB time=00:00:24.70 bitrate= 128.0kbits/s speed=  17x    size=     804kB time=00:00:51.45 bitrate= 128.0kbits/s speed=24.5x    size=    1083kB time=00:01:09.28 bitrate= 128.0kbits/s speed=24.7x    size=    1454kB time=00:01:33.06 bitrate= 128.0kbits/s speed=23.1x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=29.6x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-014F09
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD7/014/Fixed/014F10.wav':
+  Duration: 00:02:05.72, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=8.22x    size=     433kB time=00:00:27.67 bitrate= 128.0kbits/s speed=18.4x    size=     897kB time=00:00:57.39 bitrate= 128.0kbits/s speed=23.2x    size=    1315kB time=00:01:24.14 bitrate= 128.0kbits/s speed=24.5x    size=    1733kB time=00:01:50.89 bitrate= 128.0kbits/s speed=27.5x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=29.7x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-014F10
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F01.wav':
+  Duration: 00:01:46.14, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     996kB time=00:01:03.71 bitrate= 128.0kbits/s speed= 127x    size=    1245kB time=00:01:19.68 bitrate= 128.0kbits/s speed=41.7x    size=    1658kB time=00:01:46.13 bitrate= 128.0kbits/s speed=  55x    
+video:0kB audio:1658kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004593%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F01
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F02.wav':
+  Duration: 00:02:09.09, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/sVLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed= 7.5x    size=     572kB time=00:00:36.59 bitrate= 128.0kbits/s speed=23.8x    size=    1036kB time=00:01:06.31 bitrate= 128.0kbits/s speed=26.2x    size=    1408kB time=00:01:30.09 bitrate= 128.0kbits/s speed=29.1x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=33.4x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=33.4x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F02
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F03.wav':
+  Duration: 00:01:51.00, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=8.19x    size=     525kB time=00:00:33.62 bitrate= 128.0kbits/s speed=21.1x    size=     943kB time=00:01:00.36 bitrate= 128.0kbits/s speed=26.3x    size=    1580kB time=00:01:41.14 bitrate= 128.0kbits/s speed=36.1x    size=    1734kB time=00:01:51.00 bitrate= 128.0kbits/s speed=39.6x    
+video:0kB audio:1734kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004392%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F03
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F04.wav':
+  Duration: 00:01:41.92, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=12.1x    size=     456kB time=00:00:29.16 bitrate= 128.0kbits/s speed=23.7x    size=     874kB time=00:00:55.91 bitrate= 128.0kbits/s speed=26.4x    size=    1292kB time=00:01:22.66 bitrate= 128.0kbits/s speed=31.5x    size=    1593kB time=00:01:41.91 bitrate= 128.0kbits/s speed=38.6x    
+video:0kB audio:1592kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004783%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F04
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F05.wav':
+  Duration: 00:01:34.14, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=6.72x    size=     502kB time=00:00:32.13 bitrate= 128.0kbits/s speed=20.1x    size=    1431kB time=00:01:31.57 bitrate= 128.0kbits/s speed=34.3x    size=    1471kB time=00:01:34.14 bitrate= 128.0kbits/s speed=35.2x    
+video:0kB audio:1471kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.005178%
+LOG (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F05
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F06.wav':
+  Duration: 00:01:46.87, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=5.26x    size=     502kB time=00:00:32.13 bitrate= 128.0kbits/s speed=15.8x    size=     827kB time=00:00:52.93 bitrate= 128.0kbits/s speed=17.5x    size=    1245kB time=00:01:19.68 bitrate= 128.0kbits/s speed=20.8x    size=    1670kB time=00:01:46.87 bitrate= 128.0kbits/s speed=27.7x    
+video:0kB audio:1670kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004562%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F06
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F07.wav':
+  Duration: 00:01:36.15, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed= 8.1x    size=     456kB time=00:00:29.16 bitrate= 128.0kbits/s speed=17.3x    size=     920kB time=00:00:58.88 bitrate= 128.0kbits/s speed=24.8x    size=    1338kB time=00:01:25.63 bitrate= 128.0kbits/s speed=26.7x    size=    1502kB time=00:01:36.15 bitrate= 128.0kbits/s speed=29.9x    
+video:0kB audio:1502kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.005070%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F07
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F08.wav':
+  Duration: 00:02:10.33, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16leVLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed= 7.8x    size=     502kB time=00:00:32.13 bitrate= 128.0kbits/s speed=18.9x    size=    1013kB time=00:01:04.82 bitrate= 128.0kbits/s speed=20.1x    size=    1431kB time=00:01:31.57 bitrate= 128.0kbits/s speed=24.2x    size=    1875kB time=00:02:00.00 bitrate= 128.0kbits/s speed=31.6x    
+video:0kB audio:1875kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004062%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F08
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F09.wav':
+  Duration: 00:01:56.17, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=2.16x    size=     525kB time=00:00:33.62 bitrate= 128.0kbits/s speed=5.68x    size=    1036kB time=00:01:06.31 bitrate= 128.0kbits/s speed=7.86x    size=    1129kB time=00:01:12.25 bitrate= 128.0kbits/s speed=7.97x    size=    1733kB time=00:01:50.89 bitrate= 128.0kbits/s speed=9.99x    size=    1815kB time=00:01:56.16 bitrate= 128.0kbits/s speed=10.5x    
+video:0kB audio:1815kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004197%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F09
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD8/015/Fixed/015F10.wav':
+  Duration: 00:01:51.05, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+size=     107kB time=00:00:06.87 bitrate= 128.1kbits/s speed=5.14x    size=     827kB time=00:00:52.93 bitrate= 128.0kbits/s speed=18.8x    size=    1083kB time=00:01:09.28 bitrate= 128.0kbits/s speed=15.8x    size=    1129kB time=00:01:12.25 bitrate= 128.0kbits/s speed=14.2x    size=    1735kB time=00:01:51.04 bitrate= 128.0kbits/s speed=21.7x    
+video:0kB audio:1735kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004390%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-015F10
+LOG (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:185)  Done 15 out of 15 utterances.
+LOG (copy-feats[5.5.931~1-aecd]:main():copy-feats.cc:143) Copied 15 feature matrices.
+# Accounting: time=75 threads=1
+# Ended (code 0) at Mon Jun 21 15:39:09 EDT 2021, elapsed time 75 seconds

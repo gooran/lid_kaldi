@@ -22,11 +22,11 @@ LidModel::LidModel(const char *lid_path) {
     ReadConfigFromFile(language_path_str + "/mfcc.conf", &mfcc_opts);
     ReadConfigFromFile(language_path_str + "/vad.conf", &opts);
     lidvector_mfcc_opts.frame_opts.allow_downsample = true; // It is safe to downsample
-    plda_rxfilename = language_path_str + "/plda_adapt.smooth0.1";
+    plda_rxfilename = language_path_str + "/plda";
     mean_rxfilename = language_path_str + "/mean.vec";
     transform_rxfilename = language_path_str + "/transform.mat";
     nnet_rxfilename = language_path_str + "/final.ext.raw";
-    train_ivector_rspecifier = "ark:" + language_path_str + "/xvector.final.train.scp";
+    train_ivector_rspecifier = "scp:" + language_path_str + "/spk_xvector.scp";
     num_utts_rspecifier = "ark:" + language_path_str + "/num_utts.ark";
 
     sliding_opts.cmn_window = 300;

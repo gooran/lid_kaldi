@@ -1,0 +1,38 @@
+# compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/utt2dur.14 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/wav_sre16_eval_enroll.14.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/utt2num_frames.14 --compress=true ark:- ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_eval_enroll.14.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_eval_enroll.14.scp 
+# Started at Mon Jun 21 15:39:14 EDT 2021
+#
+copy-feats --write-num-frames=ark,t:exp/make_mfcc/utt2num_frames.14 --compress=true ark:- ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_eval_enroll.14.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/raw_mfcc_sre16_eval_enroll.14.scp 
+compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/utt2dur.14 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/wav_sre16_eval_enroll.14.scp ark:- 
+ffmpeg version 3.4.8-0ubuntu0.2 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from '/media/kaldinew/data2/large-farsdat/CD12/024/Fixed/024F01.wav':
+  Duration: 00:01:50.77, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'pipe:':
+  Metadata:
+    ISFT            : Lavf57.83.100
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc57.107.100 pcm_s16le
+VLOG[1] (compute-mfcc-feats[5.5.931~1-aecd]:Read():wave-reader.cc:249) Read in RIFF chunk size: 4294967295, data chunk size: 4294967295. Assume 'stream mode' (reading data to EOF).
+size=     938kB time=00:01:00.00 bitrate= 128.0kbits/s speed= 773x    
+video:0kB audio:938kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.008125%
+VLOG[2] (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:182) Processed features for key utt-024F01
+LOG (compute-mfcc-feats[5.5.931~1-aecd]:main():compute-mfcc-feats.cc:185)  Done 1 out of 1 utterances.
+LOG (copy-feats[5.5.931~1-aecd]:main():copy-feats.cc:143) Copied 1 feature matrices.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jun 21 15:39:14 EDT 2021, elapsed time 0 seconds

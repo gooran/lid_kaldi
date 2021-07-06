@@ -8,10 +8,10 @@
 int main() {
 
     char ch_arr[1][29] = {
-        "test_ru.wav"
+        "001F05.wav"
     };
 
-    L2mLidModel *lid_model = l2m_lid_model_new("lid-model");
+    L2mLidModel *lid_model = l2m_lid_model_new("spk-model");
 
     for(int i = 0; i < 1; i++) {
         L2mRecognizer *recognizer = l2m_recognizer_new_lid(lid_model, 8000.0);

@@ -1,0 +1,6 @@
+# ivector-mean scp:exp/xvectors_sre16_major/xvector.scp exp/xvectors_sre16_major/mean.vec 
+# Started at Mon Jun 21 15:41:04 EDT 2021
+#
+ivector-mean scp:exp/xvectors_sre16_major/xvector.scp exp/xvectors_sre16_major/mean.vec 
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jun 21 15:41:04 EDT 2021, elapsed time 0 seconds

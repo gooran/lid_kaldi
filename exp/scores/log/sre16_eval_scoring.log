@@ -1,0 +1,32 @@
+# ivector-plda-scoring --normalize-length=true --num-utts=ark:exp/xvectors_sre16_eval_enroll/num_utts.ark "ivector-copy-plda --smoothing=0.0 exp/xvectors_sre_combined/plda - |" "ark:ivector-mean ark:data/sre16_eval_enroll/spk2utt scp:exp/xvectors_sre16_eval_enroll/xvector.scp ark:- | ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec ark:- ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |" "ark:ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec scp:exp/xvectors_sre16_eval_test/xvector.scp ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |" "cat 'data/sre16_eval_test/trials' | cut -d\  --fields=1,2 |" exp/scores/sre16_eval_scores 
+# Started at Mon Jun 21 15:41:04 EDT 2021
+#
+ivector-plda-scoring --normalize-length=true --num-utts=ark:exp/xvectors_sre16_eval_enroll/num_utts.ark 'ivector-copy-plda --smoothing=0.0 exp/xvectors_sre_combined/plda - |' 'ark:ivector-mean ark:data/sre16_eval_enroll/spk2utt scp:exp/xvectors_sre16_eval_enroll/xvector.scp ark:- | ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec ark:- ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |' 'ark:ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec scp:exp/xvectors_sre16_eval_test/xvector.scp ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |' 'cat '\''data/sre16_eval_test/trials'\'' | cut -d\  --fields=1,2 |' exp/scores/sre16_eval_scores 
+ivector-copy-plda --smoothing=0.0 exp/xvectors_sre_combined/plda - 
+ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec ark:- ark:- 
+ivector-mean ark:data/sre16_eval_enroll/spk2utt scp:exp/xvectors_sre16_eval_enroll/xvector.scp ark:- 
+ivector-normalize-length ark:- ark:- 
+transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- 
+LOG (ivector-mean[5.5.931~1-aecd]:main():ivector-mean.cc:134) Computed mean of 30 speakers (0 with no utterances), consisting of 30 utterances (0 absent from input).
+LOG (ivector-mean[5.5.931~1-aecd]:main():ivector-mean.cc:145) Norm of mean of speakers is 41.7216, root-mean-square speaker-iVector length divided by sqrt(dim) is 4.02393
+LOG (ivector-subtract-global-mean[5.5.931~1-aecd]:main():ivector-subtract-global-mean.cc:108) Wrote 30 mean-subtracted iVectors
+LOG (transform-vec[5.5.931~1-aecd]:main():transform-vec.cc:85) Applied transform to 30 vectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:90) Processed 30 iVectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 0.620277, standard deviation was 0.0694866
+transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- 
+ivector-subtract-global-mean exp/xvectors_sre16_major/mean.vec scp:exp/xvectors_sre16_eval_test/xvector.scp ark:- 
+ivector-normalize-length ark:- ark:- 
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:96) Reading train iVectors
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:122) Read 30 training iVectors, errors on 0
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:126) Average renormalization scale on training iVectors was 0.895752
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:129) Reading test iVectors
+LOG (ivector-subtract-global-mean[5.5.931~1-aecd]:main():ivector-subtract-global-mean.cc:108) Wrote 270 mean-subtracted iVectors
+LOG (transform-vec[5.5.931~1-aecd]:main():transform-vec.cc:85) Applied transform to 270 vectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:90) Processed 270 iVectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 0.756702, standard deviation was 0.0729409
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:147) Read 270 test iVectors.
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:150) Average renormalization scale on test iVectors was 0.910517
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:214) Mean score was -10.7324, standard deviation was 11.8211
+LOG (ivector-plda-scoring[5.5.931~1-aecd]:main():ivector-plda-scoring.cc:217) Processed 8100 trials, 0 had errors.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jun 21 15:41:04 EDT 2021, elapsed time 0 seconds

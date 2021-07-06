@@ -1,0 +1,8 @@
+# compute-vad --config=conf/vad.conf scp:data/sre16_eval_test/split20/3/feats.scp ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/vad_sre16_eval_test.3.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/vad_sre16_eval_test.3.scp 
+# Started at Mon Jun 21 15:39:13 EDT 2021
+#
+compute-vad --config=conf/vad.conf scp:data/sre16_eval_test/split20/3/feats.scp ark,scp:/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/vad_sre16_eval_test.3.ark,/home/kaldinew/kaldi/egs/sre16/v2-callhome/mfcc/vad_sre16_eval_test.3.scp 
+LOG (compute-vad[5.5.931~1-aecd]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 18 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.931~1-aecd]:main():compute-vad.cc:99) Proportion of voiced frames was 0.642778 over 10800 frames.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jun 21 15:39:13 EDT 2021, elapsed time 0 seconds

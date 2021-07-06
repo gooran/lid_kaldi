@@ -1,0 +1,148 @@
+# ivector-adapt-plda --within-covar-scale=0.75 --between-covar-scale=0.25 exp/xvectors_sre_combined/plda "ark:ivector-subtract-global-mean scp:exp/xvectors_sre16_major/xvector.scp ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |" exp/xvectors_sre16_major/plda_adapt 
+# Started at Mon Jun 21 15:41:04 EDT 2021
+#
+ivector-adapt-plda --within-covar-scale=0.75 --between-covar-scale=0.25 exp/xvectors_sre_combined/plda 'ark:ivector-subtract-global-mean scp:exp/xvectors_sre16_major/xvector.scp ark:- | transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- | ivector-normalize-length ark:- ark:- |' exp/xvectors_sre16_major/plda_adapt 
+ivector-subtract-global-mean scp:exp/xvectors_sre16_major/xvector.scp ark:- 
+ivector-normalize-length ark:- ark:- 
+LOG (ivector-subtract-global-mean[5.5.931~1-aecd]:main():ivector-subtract-global-mean.cc:76) Read 300 iVectors.
+LOG (ivector-subtract-global-mean[5.5.931~1-aecd]:main():ivector-subtract-global-mean.cc:79) Norm of iVector mean was 41.7849
+transform-vec exp/xvectors_sre_combined/transform.mat ark:- ark:- 
+LOG (ivector-subtract-global-mean[5.5.931~1-aecd]:main():ivector-subtract-global-mean.cc:108) Wrote 300 mean-subtracted iVectors
+LOG (transform-vec[5.5.931~1-aecd]:main():transform-vec.cc:85) Applied transform to 300 vectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:90) Processed 300 iVectors.
+LOG (ivector-normalize-length[5.5.931~1-aecd]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 0.612404, standard deviation was 0.0640613
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:658) Eigenvalues of adaptation-data total-covariance in space where training-data total-covariance is unit, is:  [ 36.5523 12.6118 10.8741 8.85664 7.78946 6.97415 5.8269 5.6283 5.2172 4.76421 4.52781 4.18163 3.86592 3.5203 3.24865 2.95578 2.80761 2.55612 2.41981 2.13356 2.07565 1.60097 1.5249 1.42885 1.25409 1.13763 1.02169 0.813116 0.773029 0.631272 0.619105 0.553497 0.505743 0.443034 0.415955 0.386087 0.369931 0.351828 0.337561 0.329719 0.306902 0.284124 0.271809 0.261294 0.252097 0.241657 0.239555 0.229247 0.214345 0.210379 0.200002 0.192692 0.177113 0.170809 0.168104 0.159567 0.15549 0.150823 0.14722 0.139885 0.139168 0.126878 0.125495 0.120696 0.117805 0.113864 0.108681 0.108367 0.101424 0.0954997 0.0911652 0.0902079 0.0864432 0.083312 0.0813092 0.0807114 0.0766607 0.0750171 0.071525 0.0688317 0.0675001 0.0630833 0.0618522 0.0611571 0.0582052 0.0564848 0.0550084 0.0514989 0.0505052 0.0499507 0.0487739 0.0455575 0.0444382 0.0419283 0.0416245 0.0406207 0.0391249 0.0363047 0.0361483 0.0355505 0.032605 0.0305058 0.0299106 0.0288306 0.0270746 0.0258208 0.0253898 0.0230778 0.022942 0.0226804 0.0210129 0.0194046 0.0188113 0.0181403 0.0172427 0.0159009 0.0156983 0.0146894 0.0140353 0.0127303 0.0109703 0.0105959 0.00922984 0.00835224 0.00701534 0.00673469 0.00576065 0.00373479 ]
+
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 0'th eigenvalue, value is 36.5523, within-class covar in this direction is 0.708732, between-class is 0.291268
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 1'th eigenvalue, value is 12.6118, within-class covar in this direction is 0.72296, between-class is 0.27704
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 2'th eigenvalue, value is 10.8741, within-class covar in this direction is 0.681039, between-class is 0.318961
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 3'th eigenvalue, value is 8.85664, within-class covar in this direction is 0.74732, between-class is 0.25268
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 4'th eigenvalue, value is 7.78946, within-class covar in this direction is 0.71908, between-class is 0.28092
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 5'th eigenvalue, value is 6.97415, within-class covar in this direction is 0.760931, between-class is 0.239069
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 6'th eigenvalue, value is 5.8269, within-class covar in this direction is 0.720043, between-class is 0.279957
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 7'th eigenvalue, value is 5.6283, within-class covar in this direction is 0.702382, between-class is 0.297618
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 8'th eigenvalue, value is 5.2172, within-class covar in this direction is 0.747865, between-class is 0.252135
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 9'th eigenvalue, value is 4.76421, within-class covar in this direction is 0.718698, between-class is 0.281302
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 10'th eigenvalue, value is 4.52781, within-class covar in this direction is 0.738886, between-class is 0.261114
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 11'th eigenvalue, value is 4.18163, within-class covar in this direction is 0.753321, between-class is 0.246679
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 12'th eigenvalue, value is 3.86592, within-class covar in this direction is 0.712774, between-class is 0.287226
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 13'th eigenvalue, value is 3.5203, within-class covar in this direction is 0.762177, between-class is 0.237823
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 14'th eigenvalue, value is 3.24865, within-class covar in this direction is 0.750252, between-class is 0.249748
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 15'th eigenvalue, value is 2.95578, within-class covar in this direction is 0.743155, between-class is 0.256845
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 16'th eigenvalue, value is 2.80761, within-class covar in this direction is 0.752922, between-class is 0.247078
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 17'th eigenvalue, value is 2.55612, within-class covar in this direction is 0.714583, between-class is 0.285417
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 18'th eigenvalue, value is 2.41981, within-class covar in this direction is 0.76748, between-class is 0.23252
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 19'th eigenvalue, value is 2.13356, within-class covar in this direction is 0.762743, between-class is 0.237257
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 20'th eigenvalue, value is 2.07565, within-class covar in this direction is 0.769312, between-class is 0.230688
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 21'th eigenvalue, value is 1.60097, within-class covar in this direction is 0.753259, between-class is 0.246741
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 22'th eigenvalue, value is 1.5249, within-class covar in this direction is 0.739959, between-class is 0.260041
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 23'th eigenvalue, value is 1.42885, within-class covar in this direction is 0.75831, between-class is 0.24169
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 24'th eigenvalue, value is 1.25409, within-class covar in this direction is 0.781059, between-class is 0.218941
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 25'th eigenvalue, value is 1.13763, within-class covar in this direction is 0.758761, between-class is 0.241239
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 26'th eigenvalue, value is 1.02169, within-class covar in this direction is 0.745544, between-class is 0.254456
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 27'th eigenvalue, value is 0.813116, within-class covar in this direction is 0.777998, between-class is 0.222002
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 28'th eigenvalue, value is 0.773029, within-class covar in this direction is 0.774509, between-class is 0.225491
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 29'th eigenvalue, value is 0.631272, within-class covar in this direction is 0.779801, between-class is 0.220199
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 30'th eigenvalue, value is 0.619105, within-class covar in this direction is 0.756034, between-class is 0.243966
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 31'th eigenvalue, value is 0.553497, within-class covar in this direction is 0.787997, between-class is 0.212003
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 32'th eigenvalue, value is 0.505743, within-class covar in this direction is 0.80035, between-class is 0.19965
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 33'th eigenvalue, value is 0.443034, within-class covar in this direction is 0.736752, between-class is 0.263248
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 34'th eigenvalue, value is 0.415955, within-class covar in this direction is 0.774725, between-class is 0.225275
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 35'th eigenvalue, value is 0.386087, within-class covar in this direction is 0.77109, between-class is 0.22891
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 36'th eigenvalue, value is 0.369931, within-class covar in this direction is 0.787998, between-class is 0.212002
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 37'th eigenvalue, value is 0.351828, within-class covar in this direction is 0.792192, between-class is 0.207808
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 38'th eigenvalue, value is 0.337561, within-class covar in this direction is 0.805106, between-class is 0.194894
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 39'th eigenvalue, value is 0.329719, within-class covar in this direction is 0.784794, between-class is 0.215206
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 40'th eigenvalue, value is 0.306902, within-class covar in this direction is 0.775767, between-class is 0.224233
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 41'th eigenvalue, value is 0.284124, within-class covar in this direction is 0.79834, between-class is 0.20166
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 42'th eigenvalue, value is 0.271809, within-class covar in this direction is 0.788461, between-class is 0.211539
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 43'th eigenvalue, value is 0.261294, within-class covar in this direction is 0.77788, between-class is 0.22212
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 44'th eigenvalue, value is 0.252097, within-class covar in this direction is 0.796569, between-class is 0.203431
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 45'th eigenvalue, value is 0.241657, within-class covar in this direction is 0.780093, between-class is 0.219907
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 46'th eigenvalue, value is 0.239555, within-class covar in this direction is 0.791575, between-class is 0.208425
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 47'th eigenvalue, value is 0.229247, within-class covar in this direction is 0.77898, between-class is 0.22102
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 48'th eigenvalue, value is 0.214345, within-class covar in this direction is 0.812512, between-class is 0.187488
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 49'th eigenvalue, value is 0.210379, within-class covar in this direction is 0.796274, between-class is 0.203726
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 50'th eigenvalue, value is 0.200002, within-class covar in this direction is 0.775281, between-class is 0.224719
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 51'th eigenvalue, value is 0.192692, within-class covar in this direction is 0.784077, between-class is 0.215923
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 52'th eigenvalue, value is 0.177113, within-class covar in this direction is 0.767868, between-class is 0.232132
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 53'th eigenvalue, value is 0.170809, within-class covar in this direction is 0.792546, between-class is 0.207454
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 54'th eigenvalue, value is 0.168104, within-class covar in this direction is 0.788422, between-class is 0.211578
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 55'th eigenvalue, value is 0.159567, within-class covar in this direction is 0.827933, between-class is 0.172067
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 56'th eigenvalue, value is 0.15549, within-class covar in this direction is 0.771497, between-class is 0.228503
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 57'th eigenvalue, value is 0.150823, within-class covar in this direction is 0.801615, between-class is 0.198385
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 58'th eigenvalue, value is 0.14722, within-class covar in this direction is 0.792433, between-class is 0.207567
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 59'th eigenvalue, value is 0.139885, within-class covar in this direction is 0.784141, between-class is 0.215859
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 60'th eigenvalue, value is 0.139168, within-class covar in this direction is 0.796596, between-class is 0.203404
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 61'th eigenvalue, value is 0.126878, within-class covar in this direction is 0.773991, between-class is 0.226009
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 62'th eigenvalue, value is 0.125495, within-class covar in this direction is 0.799591, between-class is 0.200409
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 63'th eigenvalue, value is 0.120696, within-class covar in this direction is 0.799902, between-class is 0.200098
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 64'th eigenvalue, value is 0.117805, within-class covar in this direction is 0.812541, between-class is 0.187459
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 65'th eigenvalue, value is 0.113864, within-class covar in this direction is 0.809688, between-class is 0.190312
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 66'th eigenvalue, value is 0.108681, within-class covar in this direction is 0.786978, between-class is 0.213022
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 67'th eigenvalue, value is 0.108367, within-class covar in this direction is 0.792686, between-class is 0.207314
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 68'th eigenvalue, value is 0.101424, within-class covar in this direction is 0.769615, between-class is 0.230385
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 69'th eigenvalue, value is 0.0954997, within-class covar in this direction is 0.783908, between-class is 0.216092
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 70'th eigenvalue, value is 0.0911652, within-class covar in this direction is 0.825271, between-class is 0.174729
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 71'th eigenvalue, value is 0.0902079, within-class covar in this direction is 0.790821, between-class is 0.209179
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 72'th eigenvalue, value is 0.0864432, within-class covar in this direction is 0.784852, between-class is 0.215148
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 73'th eigenvalue, value is 0.083312, within-class covar in this direction is 0.78898, between-class is 0.21102
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 74'th eigenvalue, value is 0.0813092, within-class covar in this direction is 0.794829, between-class is 0.205171
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 75'th eigenvalue, value is 0.0807114, within-class covar in this direction is 0.800142, between-class is 0.199858
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 76'th eigenvalue, value is 0.0766607, within-class covar in this direction is 0.808574, between-class is 0.191426
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 77'th eigenvalue, value is 0.0750171, within-class covar in this direction is 0.793214, between-class is 0.206786
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 78'th eigenvalue, value is 0.071525, within-class covar in this direction is 0.787157, between-class is 0.212843
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 79'th eigenvalue, value is 0.0688317, within-class covar in this direction is 0.787456, between-class is 0.212544
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 80'th eigenvalue, value is 0.0675001, within-class covar in this direction is 0.768852, between-class is 0.231148
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 81'th eigenvalue, value is 0.0630833, within-class covar in this direction is 0.806443, between-class is 0.193557
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 82'th eigenvalue, value is 0.0618522, within-class covar in this direction is 0.803757, between-class is 0.196243
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 83'th eigenvalue, value is 0.0611571, within-class covar in this direction is 0.755934, between-class is 0.244066
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 84'th eigenvalue, value is 0.0582052, within-class covar in this direction is 0.746365, between-class is 0.253635
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 85'th eigenvalue, value is 0.0564848, within-class covar in this direction is 0.77717, between-class is 0.22283
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 86'th eigenvalue, value is 0.0550084, within-class covar in this direction is 0.788894, between-class is 0.211106
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 87'th eigenvalue, value is 0.0514989, within-class covar in this direction is 0.799389, between-class is 0.200611
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 88'th eigenvalue, value is 0.0505052, within-class covar in this direction is 0.751591, between-class is 0.248409
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 89'th eigenvalue, value is 0.0499507, within-class covar in this direction is 0.775446, between-class is 0.224554
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 90'th eigenvalue, value is 0.0487739, within-class covar in this direction is 0.780894, between-class is 0.219106
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 91'th eigenvalue, value is 0.0455575, within-class covar in this direction is 0.751351, between-class is 0.248649
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 92'th eigenvalue, value is 0.0444382, within-class covar in this direction is 0.777322, between-class is 0.222677
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 93'th eigenvalue, value is 0.0419283, within-class covar in this direction is 0.745995, between-class is 0.254005
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 94'th eigenvalue, value is 0.0416245, within-class covar in this direction is 0.771244, between-class is 0.228756
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 95'th eigenvalue, value is 0.0406207, within-class covar in this direction is 0.764119, between-class is 0.235881
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 96'th eigenvalue, value is 0.0391249, within-class covar in this direction is 0.798572, between-class is 0.201428
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 97'th eigenvalue, value is 0.0363047, within-class covar in this direction is 0.764208, between-class is 0.235792
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 98'th eigenvalue, value is 0.0361483, within-class covar in this direction is 0.753146, between-class is 0.246854
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 99'th eigenvalue, value is 0.0355505, within-class covar in this direction is 0.759579, between-class is 0.240421
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 100'th eigenvalue, value is 0.032605, within-class covar in this direction is 0.774132, between-class is 0.225868
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 101'th eigenvalue, value is 0.0305058, within-class covar in this direction is 0.742729, between-class is 0.257271
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 102'th eigenvalue, value is 0.0299106, within-class covar in this direction is 0.769904, between-class is 0.230096
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 103'th eigenvalue, value is 0.0288306, within-class covar in this direction is 0.714334, between-class is 0.285666
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 104'th eigenvalue, value is 0.0270746, within-class covar in this direction is 0.817085, between-class is 0.182915
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 105'th eigenvalue, value is 0.0258208, within-class covar in this direction is 0.737316, between-class is 0.262684
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 106'th eigenvalue, value is 0.0253898, within-class covar in this direction is 0.780618, between-class is 0.219382
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 107'th eigenvalue, value is 0.0230778, within-class covar in this direction is 0.747769, between-class is 0.252231
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 108'th eigenvalue, value is 0.022942, within-class covar in this direction is 0.771732, between-class is 0.228268
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 109'th eigenvalue, value is 0.0226804, within-class covar in this direction is 0.765542, between-class is 0.234458
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 110'th eigenvalue, value is 0.0210129, within-class covar in this direction is 0.718932, between-class is 0.281068
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 111'th eigenvalue, value is 0.0194046, within-class covar in this direction is 0.760018, between-class is 0.239982
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 112'th eigenvalue, value is 0.0188113, within-class covar in this direction is 0.747029, between-class is 0.252971
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 113'th eigenvalue, value is 0.0181403, within-class covar in this direction is 0.733885, between-class is 0.266115
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 114'th eigenvalue, value is 0.0172427, within-class covar in this direction is 0.749022, between-class is 0.250978
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 115'th eigenvalue, value is 0.0159009, within-class covar in this direction is 0.743258, between-class is 0.256741
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 116'th eigenvalue, value is 0.0156983, within-class covar in this direction is 0.709045, between-class is 0.290955
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 117'th eigenvalue, value is 0.0146894, within-class covar in this direction is 0.700176, between-class is 0.299824
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 118'th eigenvalue, value is 0.0140353, within-class covar in this direction is 0.742961, between-class is 0.257039
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 119'th eigenvalue, value is 0.0127303, within-class covar in this direction is 0.685889, between-class is 0.314111
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 120'th eigenvalue, value is 0.0109703, within-class covar in this direction is 0.705568, between-class is 0.294432
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 121'th eigenvalue, value is 0.0105959, within-class covar in this direction is 0.71929, between-class is 0.28071
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 122'th eigenvalue, value is 0.00922984, within-class covar in this direction is 0.675085, between-class is 0.324915
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 123'th eigenvalue, value is 0.00835224, within-class covar in this direction is 0.717013, between-class is 0.282987
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 124'th eigenvalue, value is 0.00701534, within-class covar in this direction is 0.648943, between-class is 0.351057
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 125'th eigenvalue, value is 0.00673469, within-class covar in this direction is 0.547102, between-class is 0.452898
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 126'th eigenvalue, value is 0.00576065, within-class covar in this direction is 0.670703, between-class is 0.329297
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:691) For 127'th eigenvalue, value is 0.00373479, within-class covar in this direction is 0.530236, between-class is 0.469764
+LOG (ivector-adapt-plda[5.5.931~1-aecd]:UpdatePlda():plda.cc:754) Old diagonal of between-class covar was:  [ 6.24442 2.17383 1.69129 1.58868 1.37027 1.22676 1.11951 1.038 1.00598 0.953092 0.939344 0.890976 0.881714 0.846311 0.795129 0.777415 0.754135 0.732223 0.722055 0.690954 0.653261 0.64541 0.636265 0.620889 0.608239 0.582102 0.576365 0.55742 0.541102 0.53486 0.524986 0.497941 0.494163 0.477594 0.461958 0.457392 0.446624 0.441248 0.427076 0.420892 0.414649 0.410747 0.385465 0.37922 0.370098 0.369637 0.360603 0.350685 0.342711 0.335942 0.329335 0.318594 0.313381 0.310705 0.310354 0.302294 0.29149 0.289822 0.276195 0.273182 0.264215 0.262576 0.25531 0.253162 0.248921 0.242016 0.241082 0.232544 0.228336 0.219523 0.218218 0.215352 0.208134 0.202678 0.201182 0.194311 0.192366 0.189327 0.186686 0.180797 0.177436 0.173604 0.169665 0.169131 0.1668 0.161586 0.156226 0.152442 0.149316 0.147078 0.143335 0.139701 0.138628 0.137884 0.134052 0.132065 0.127822 0.12396 0.122479 0.120887 0.118185 0.114957 0.113142 0.109827 0.105507 0.104118 0.102742 0.101171 0.0971215 0.095555 0.0937879 0.0901661 0.0877812 0.0852594 0.0820334 0.0794824 0.0765231 0.0745296 0.0735599 0.069269 0.0669439 0.0659067 0.0638413 0.0610662 0.0573573 0.0554407 0.0481821 0.0404997 ]
+, new diagonal is  [ 4.71296 1.73588 1.45973 1.32281 1.05425 1.00011 0.944192 0.890213 0.84929 0.82091 0.805228 0.753211 0.731726 0.72021 0.705473 0.696622 0.668239 0.642213 0.614504 0.590815 0.572475 0.556876 0.545379 0.53725 0.531519 0.519404 0.504176 0.492406 0.47813 0.462221 0.453923 0.447113 0.431734 0.425777 0.423325 0.420847 0.408184 0.397699 0.392816 0.392563 0.387249 0.369357 0.364465 0.361686 0.35935 0.35376 0.348568 0.34194 0.339157 0.334458 0.331691 0.327489 0.323274 0.320662 0.317912 0.314041 0.312287 0.310021 0.304677 0.298773 0.296882 0.291659 0.283191 0.279338 0.277332 0.270277 0.265422 0.262424 0.259553 0.257348 0.249696 0.246003 0.237598 0.229604 0.228843 0.22248 0.221146 0.218613 0.213567 0.20983 0.207176 0.204471 0.202662 0.198365 0.193296 0.189812 0.184339 0.180176 0.173274 0.172334 0.170328 0.166759 0.160464 0.158987 0.152365 0.150904 0.148687 0.1454 0.140325 0.137491 0.136165 0.132875 0.129874 0.126526 0.124634 0.122972 0.121095 0.118469 0.114752 0.112586 0.112078 0.105341 0.102644 0.099128 0.0976738 0.0957566 0.0914405 0.0894399 0.0862115 0.0831547 0.0756467 0.0742364 0.0715453 0.0701769 0.0668349 0.062496 0.0578393 0.046029 ]
+
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jun 21 15:41:04 EDT 2021, elapsed time 0 seconds
